@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+# database 연동 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_naengbu_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: naengbu
+    password: tkadbr33!@
+  thymeleaf:
+    cache: false
+
+  # spring data jpa 설정
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  # 로그 레벨 설정 추가
+  logging:
+    level:
+      org.springframework.web: DEBUG
+      com.naengbu.user: DEBUG
